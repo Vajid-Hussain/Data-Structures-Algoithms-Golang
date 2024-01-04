@@ -28,7 +28,28 @@ func (list *start) insert(data int) {
 	for current.Next != nil {
 		current = current.Next
 	}
+	node.Next = list.head
 	current.Next = &node
+}
+
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func hasCycle(head *ListNode) bool {
+	var mp = make(map[*ListNode]int)
+
+	for head != nil {
+		if _, ok := mp[head.Next]; ok {
+			return true
+		}
+		mp[head.Next]++
+		head = head.Next
+	}
+	return false
 }
 
 func main() {
@@ -37,11 +58,12 @@ func main() {
 	head.insert(1)
 	head.insert(2)
 
-	current := head.head
-	// fmt.Println("##", current)
+	// current := head.head
+	val := hasCycle(head.head)
+	fmt.Println("**", val)
 
-	for current != nil {
-		fmt.Println("!!", current.Val)
-		current = current.Next
-	}
+	// for current != nil {
+	// 	fmt.Println("!!", current.Val)
+	// 	current = current.Next
+	// }
 }
