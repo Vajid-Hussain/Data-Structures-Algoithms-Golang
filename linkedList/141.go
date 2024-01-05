@@ -50,6 +50,7 @@ func hasCycle(head *ListNode) bool {
 		head = head.Next
 	}
 	return false
+
 }
 
 func main() {
