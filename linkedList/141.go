@@ -1,4 +1,4 @@
-package main
+package linkedList141
 
 import (
 	"fmt"
@@ -32,22 +32,31 @@ func (list *start) insert(data int) {
 	current.Next = &node
 }
 
-/**
- * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
- */
-func hasCycle(head *ListNode) bool {
-	var mp = make(map[*ListNode]int)
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
 
-	for head != nil {
-		if _, ok := mp[head.Next]; ok {
+func hasCycle(head *ListNode) bool {
+	// var mp = make(map[*ListNode]int)
+
+	// for head != nil {
+	// 	if _, ok := mp[head.Next]; ok {
+	// 		return true
+	// 	}
+	// 	mp[head.Next]++
+	// 	head = head.Next
+	// }
+	// return false
+
+	slowPoint, fastPoint := head, head
+
+	for fastPoint != nil && fastPoint.Next != nil {
+		slowPoint = slowPoint.Next
+		fastPoint = fastPoint.Next.Next
+		if slowPoint == fastPoint {
 			return true
 		}
-		mp[head.Next]++
-		head = head.Next
 	}
 	return false
 
@@ -60,8 +69,8 @@ func main() {
 	head.insert(2)
 
 	// current := head.head
-	val := hasCycle(head.head)
-	fmt.Println("**", val)
+	// val := hasCycle(head.head)
+	// fmt.Println("**", val)
 
 	// for current != nil {
 	// 	fmt.Println("!!", current.Val)
