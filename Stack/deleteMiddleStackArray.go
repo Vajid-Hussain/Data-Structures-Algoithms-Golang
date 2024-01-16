@@ -2,25 +2,45 @@
 
 // import "fmt"
 
-// var arr = []int{4, 5, 6, 3, 2, 8, 9}
-// var top = 6
+// // var arr = []int{4, 5, 6, 3, 2, 8, 9}
+// var arr = make([]int, 7)
+// var top = 0
+// var temp =true
 
-// func delete(arr []int, pos int) {
+// func delete(pos int) {
 // 	if pos == arr[top] {
+// 		pop()
 // 		return
 // 	}
+// 	currentTop := arr[top]
+// 	pop()
 
-// 	data := arr[top]
-// 	top--
-// 	delete(arr, pos)
-// 	arr[top] = data
-// 	top++
+// 	delete(pos)
+// 	push(currentTop)
 // }
 
-// func main() {
+// func push(data int) {
+// 	if temp{
+// 		arr[top]=data
+// 		temp=false
+// 		return
+// 	}
+// 	top++
+// 	arr[top] = data
+// }
 
-// 	delete(arr, 5)
-// 	for i := 0; i < top; i++ {
+// func pop() {
+// 	top = top -1
+// }
+	
+// func main() {
+// 	push(3)
+// 	push(2)
+// 	push(7)
+// 	push(6)
+
+// 	delete(6)
+// 	for i := 0; i <= top; i++ {
 // 		fmt.Println("@@", arr[i])
 // 	}
 // 	fmt.Println("**", arr)
