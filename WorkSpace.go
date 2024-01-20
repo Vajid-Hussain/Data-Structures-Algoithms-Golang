@@ -1,23 +1,7 @@
-// package main
+package main
 
-// import "fmt"
+import "fmt"
 
-// var queue []int
-
-// func enqueue(data int) {
-// 	queue = append(queue, data)
-// }
-
-// func display() {
-// 	for _, val := range queue {
-// 		fmt.Println(val)
-// 	}
-// }
-
-// func delete() {
-// 	queue = queue[1:]
-// }
-
-// func main() {
-
-// }
+func main() {
+	fmt.Println('A', 'Z','a','z',',')
+}
