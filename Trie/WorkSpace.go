@@ -112,6 +112,7 @@ func main() {
 	trie.insertion("vajidhus")
 	trie.insertion("vajidhussain")
 	// trie.delete(&trie,"vajid",0)
-	fmt.Println(trie.autocomplete("vajid"))
+	fmt.Println(trie.autocomplete("vaji"))
 	// fmt.Println("search:", trie.serch("vajid"))
 }
+	
