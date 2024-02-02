@@ -1,10 +1,13 @@
-// package main
-// import "fmt"
+package main
 
-// func main() {
-//   fmt.Println("Hello World!")
-//   a := []int{1,2,3}
-//   b := append(a[:1],10)
-//     fmt.Println("a ",a, b)
+import (
+	"fmt"
+	"strconv"
+)
 
-// }
+func main() {
+	value := strconv.FormatInt(3, 2)
+	intVal,_:=strconv.Atoi(value)
+	fmt.Println(value,intVal)
+
+}
