@@ -29,3 +29,14 @@
 //  }
  
 //second solution
+
+// func reverseList(head *ListNode) (prev *ListNode ){
+//     prev, curt := nil, head
+//     for curt!=nil{
+//         nxt:=curt.Next
+//         curt.Next=prev
+//         prev=curt
+//         curt=nxt
+//     }
+//     return prev
+// }
