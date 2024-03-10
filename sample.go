@@ -1,13 +1,15 @@
 package main
 
-import (
-	"fmt"
-	"strconv"
-)
+import "fmt"
 
 func main() {
-	value := strconv.FormatInt(3, 2)
-	intVal,_:=strconv.Atoi(value)
-	fmt.Println(value,intVal)
+	fmt.Println("--", fibanocci(8))
+}
 
+func fibanocci(n int) int {
+	if n <= 1 {
+		return n
+	}
+
+	return sum
 }
