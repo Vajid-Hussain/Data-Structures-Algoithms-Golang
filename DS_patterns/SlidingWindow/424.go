@@ -44,3 +44,30 @@
 //     }
 //     return
 // }
+
+// //full correct 
+// func characterReplacement(s string, k int)int{
+//     count:= make(map[byte]int)
+//     var res, maxf, left int
+
+//     for right:=0; right<len(s); right++{
+//         count[s[right]]+=1
+
+//         maxf = max(maxf, count[s[right]])
+
+//         if (right-left+1) - maxf>k{
+//             count[s[left]]--
+//             left++
+//         }
+
+//         res= max(res, right-left+1)
+//     }
+//     return res
+// }
+
+// func max(a, b int)int{
+//     if a>b{
+//         return a
+//     }
+//     return b
+// }
