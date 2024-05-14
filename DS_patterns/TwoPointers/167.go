@@ -17,3 +17,26 @@
 //     }
 //    return []int{}
 // }
+
+// By using gc for clean memory
+
+// func twoSum(numbers []int, target int) []int {
+// 	debug.SetGCPercent(1)
+
+// var(
+// 	i, j= 0, len(numbers)-1
+// 	num int
+// )
+
+// for i<j{
+// 	num = numbers[i] + numbers[j]
+// 	if num < target{
+// 		i++
+// 	}else if num > target{
+// 		j--
+// 	}else{
+// 		return []int{i+1, j+1}
+// 	}
+// }
+// return []int{}
+// }
