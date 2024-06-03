@@ -1,40 +1,39 @@
 // func lengthOfLongestSubstring(s string) int {
-// 	var (
-// 		count  int
-// 		result int
-// 		mp     = make(map[byte]bool)
-// 		j      int
-// 	)
-
-// 	for i := 0; i < len(s); i++ {
-//         // if i==6{
-//         //     fmt.Println(mp, i,j ,count)
-//         // }
-// 		count++
-//         // fmt.Println(mp, i,j, count)
-// 		if mp[s[i]] {
-// 			// fmt.Println(mp, count)
-// 			if result < count-1 {
-// 				// fmt.Println(i, j)
-// 				result = count-1
-// 			}
-
-// 			for ; j < i; j++ {
-// 				count--
-// 				if s[i] == s[j] {
-// 					break
-// 				}
-// 				delete(mp, s[j])
-// 			}
-// 			fmt.Println()
-// 			continue
-// 		}
-
-// 		mp[s[i]] = true
+// 	var(
+// 	   mp=make(map[byte]struct{})
+// 	   start int
+// 	   end int
+// 	   result int
+// 	)   
+   
+// 	for end<len(s){
+// 	   _, exist := mp[s[end]]
+// 	   if !exist{
+// 		   // fmt.Println(end)
+// 		   mp[s[end]]=struct{}{}
+// 		   end++
+// 	   }
+   
+// 	   if exist || end==len(s) {
+// 		   // fmt.Println(mp, start,end)
+// 		   if result < end-start{
+// 			   result=end-start
+// 		   }
+   
+// 		   if end==len(s){
+// 			   return result
+// 		   }
+// 		   clear(mp, s[end], s, &start)
+// 	   }
 // 	}
-
-// 	if count > result {
-// 		return count
-// 	}
-// 	return result
-// }
+// 	   return result
+//    }
+   
+//    func clear(mp map[byte]struct{}, target byte, s string, start *int) {
+// 	   for s[*start] != target{
+// 		   delete(mp, s[*start])
+// 		   *start++
+// 	   }
+// 	   delete(mp, s[*start])
+// 	   *start++
+//    } 
